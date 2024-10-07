@@ -1,0 +1,341 @@
+// colors
+$color_primary: #fae3dd;
+$color_secondary: #f9eae7;
+$color_font: #48807f;
+$color_accent: #CC98B8;
+
+// fonts
+$font_title: "Caveat", cursive;
+$font_text: "Saira Condensed", sans-serif;
+
+// shadows
+$text_shadow: 2px 0 #ffffff, -2px 0 #ffffff, 0 2px #ffffff, 0 -2px #ffffff,
+  1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff;
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font_text;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1;
+  color: $color_font;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  text-shadow: $text_shadow;
+}
+
+.btn {
+  font-size: 1.6rem;
+  border: 2px solid $color_font;
+  padding: 5px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  width: max-content;
+}
+
+.main_wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35vh auto;
+  animation: fadeIn 1s;
+  min-height: 100vh;
+
+}
+
+#main.active {
+  display: grid !important;
+}
+.image_wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation-duration: 1s;
+    animation-delay: 1s;
+  }
+}
+
+.info_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/bg.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    animation-duration: 1s;
+    animation-delay: 1s;
+
+    .cross {
+      display: none;
+      height: 50px;
+      width: 100%;
+      margin-bottom: 35px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .header {
+      font-size: 2rem;
+      font-weight: 100;
+      text-align: center;
+      text-shadow: $text_shadow;
+    }
+
+    .title {
+      font-family: $font_title;
+      font-size: 4rem;
+      text-shadow: $text_shadow;
+    }
+
+    .text {
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-align: center;
+      text-shadow: $text_shadow;
+      max-width: 70%;
+    }
+
+    .mb {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      margin-top: 20px;
+      border: 2px solid $color_font;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      width: 70%;
+      margin-bottom: 35px;
+
+
+      &::before {
+        content: "";
+        background-color: $color_secondary;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.75;
+      }
+    }
+
+    .date {
+      font-size: 2rem;
+      font-weight: 500;
+      text-shadow: $text_shadow;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .address {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      text-shadow: $text_shadow;
+
+      img {
+        height: 15px;
+      }
+
+      span {
+        font-size: 1.6rem;
+        text-shadow: $text_shadow;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+counter-clock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px auto;
+  gap: 20px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .value {
+      font-size: 2rem;
+      text-shadow: $text_shadow;
+    }
+
+    label {
+      text-shadow: $text_shadow;
+    }
+  }
+}
+
+loader-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  .lds-heart {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+  }
+  .lds-heart div {
+    top: 32px;
+    left: 32px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: $color_accent;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: $color_accent;
+  }
+  .lds-heart div:before {
+    left: -24px;
+    border-radius: 50% 0 0 50%;
+  }
+  .lds-heart div:after {
+    top: -24px;
+    border-radius: 50% 50% 0 0;
+  }
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main_wrapper {
+    grid-template-columns: auto 60vw;
+    grid-template-rows: 1fr;
+  }
+
+  .info_wrapper {
+    &__text {
+      width: 100%;
+      background-image: url("./assets/frame.png");
+      background-position: center;
+
+      .cross {
+        display: inline-block;
+        height: 50px;
+        margin-bottom: 25px;
+      }
+
+      .header {
+        font-size: 3rem;
+        font-weight: 100;
+      }
+
+      .title {
+        font-family: $font_title;
+        font-size: 5rem;
+      }
+
+      .text {
+        font-size: 2rem;
+        font-weight: 300;
+        text-align: center;
+      }
+
+      .mb {
+        margin-bottom: 20px;
+      }
+
+      footer {
+        // margin-top: 30px;
+      }
+
+      .date {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .image_wrapper {
+    height: 100%;
+
+    img {
+      object-position: center;
+    }
+  }
+}
