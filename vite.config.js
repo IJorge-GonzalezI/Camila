@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "https://jahiker.github.io/bautizo-montse/"
-})
+  base: "https://ijorge-gonzalezi.github.io/Camila/",
+});

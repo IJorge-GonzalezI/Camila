@@ -1,6 +1,6 @@
 {
-  "homepage":"https://jahiker.github.io/bautizo-montse/",
-  "name": "bautizo-montserrat",
+  "homepage": "https://ijorge-gonzalezi.github.io/Camila/",
+  "name": "Camila",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
-    "vite": "^3.2.3"
+    "vite": "^3.2.11"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

@@ -7,20 +7,20 @@ import imgDesk from "./assets/montse_edit_desk.png";
 
 class Loader extends HTMLElement {
   constructor() {
-    super()
+    super();
     this.main = document.getElementById("main");
-    this.body = document.querySelector('body');
+    this.body = document.querySelector("body");
 
     document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         this.body.removeChild(this);
         this.main.classList.add("active");
       }, 1500);
-    })
+    });
   }
 }
 
-customElements.define("loader-spinner", Loader)
+customElements.define("loader-spinner", Loader);
 
 class CounterClock extends HTMLElement {
   constructor() {
@@ -39,22 +39,22 @@ class CounterClock extends HTMLElement {
   }
 
   /**
-   * 
+   *
    */
   init() {
     setInterval(() => {
-        const formatStart = this.formatDateUS(this.startDate, this.startTime);
-        const formatEnd = this.formatDateUS(this.endDate, this.endTime);
-        const formatNow = Date.now();
-        const distanceFromStart = formatStart.time - formatNow;
-        const distanceFromEnd = formatEnd.time - formatNow;
-        const restDateEnd = this.getRestDate(distanceFromEnd);
-    
-        if (distanceFromStart < 0 && distanceFromEnd > 0) {
-          this.renderCountdown(restDateEnd);
-        } else if (distanceFromStart > 0 && distanceFromEnd > 0) {
-          this.style.display = "none";
-        }
+      const formatStart = this.formatDateUS(this.startDate, this.startTime);
+      const formatEnd = this.formatDateUS(this.endDate, this.endTime);
+      const formatNow = Date.now();
+      const distanceFromStart = formatStart.time - formatNow;
+      const distanceFromEnd = formatEnd.time - formatNow;
+      const restDateEnd = this.getRestDate(distanceFromEnd);
+
+      if (distanceFromStart < 0 && distanceFromEnd > 0) {
+        this.renderCountdown(restDateEnd);
+      } else if (distanceFromStart > 0 && distanceFromEnd > 0) {
+        this.style.display = "none";
+      }
     }, 1000);
   }
 
@@ -122,7 +122,7 @@ customElements.define("counter-clock", CounterClock);
 
 class dynamicSrcImage extends HTMLElement {
   constructor() {
-    super()
+    super();
 
     this.srcDesk = imgDesk;
     this.srcMobile = imgMobile;
@@ -132,7 +132,7 @@ class dynamicSrcImage extends HTMLElement {
   }
 
   setSource() {
-    if(window.screen.width > 768) {
+    if (window.screen.width > 768) {
       this.img.src = this.srcDesk;
     } else {
       this.img.src = this.srcMobile;
